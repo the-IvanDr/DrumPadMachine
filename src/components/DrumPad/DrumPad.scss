@@ -1,0 +1,33 @@
+@import '../../scss/variables';
+.DrumPad{
+    width: 105px;
+    height: 120px;
+    margin: 5px;
+    flex-grow: 1;
+    background: $black-b;
+    border-radius: 5px;
+    box-shadow: -2px 2px 5px $red;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-shadow: $red 0px 0px 5px;
+    color: $red;
+}
+
+.DrumPad:hover{
+    cursor: pointer;
+    box-shadow: -2px 2px 5px $white;
+    text-shadow: $white 0px 0px 5px;
+    color: $white;
+
+    // box-shadow: -2px 2px 5px #000;
+    // text-shadow: #000 0px 0px 5px;
+    // color: #000;
+}
+
+.DrumPad:active{
+    text-shadow: $white 0px 0px 20px, $white 0px 0px 15px, $white 0px 0px 10px;
+
+}

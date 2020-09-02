@@ -1,0 +1,11 @@
+.ControlsPannel{
+    width: 50%;
+    height: 100%;
+    border-left: 1px solid black;
+    margin-left: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}

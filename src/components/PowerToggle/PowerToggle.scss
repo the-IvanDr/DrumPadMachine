@@ -1,0 +1,27 @@
+@import "../../scss/variables";
+.PowerToggle {
+    p {
+        text-align: center;
+        text-shadow: $white 0px 0px 5px;
+        color: $white;
+    }
+    .select {
+        width: 60px;
+        height: 25px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background: $black-b;
+        border-radius: 50px;
+        padding: 5px;
+        box-shadow: 0px 0px 5px $red;
+        .inner{
+            background: $white;
+            height: 100%;
+            width: 50%;
+            border-radius: 50px;
+            float: right;
+            box-shadow: 0px 0px 5px $white;
+            cursor: pointer;
+        }
+    }
+}

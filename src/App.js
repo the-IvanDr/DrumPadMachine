@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import PadPannel from './containers/PadPannel/PadPannel';
+import ControlsPannel from './containers/ControlsPannel/ControlsPannel';
+import DrumPad from './components/DrumPad/DrumPad';
+import PowerToggle from './components/PowerToggle/PowerToggle';
+import Display from './components/Display/Display';
+import VolumeSlider from './components/VolumeSlider/VolumeSlider';
+import BankMenu from './components/BankMenu/BankMenu';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <div className='App'>
+            <PadPannel>
+                <DrumPad />
+                <DrumPad />
+                <DrumPad />
+                <DrumPad />
+                <DrumPad />
+                <DrumPad />
+                <DrumPad />
+                <DrumPad />
+                <DrumPad />
+            </PadPannel>
+            <ControlsPannel>
+                <PowerToggle />
+                <Display />
+                <VolumeSlider />
+                <BankMenu />
+            </ControlsPannel>
+        </div>
+    )
 }
-
-export default App;
