@@ -8,7 +8,6 @@ export default function BankMenu() {
             <div className='select'>
                 <div className='select-1 active' />
                 <div className='select-2' />
-                <div className='select-3' />
             </div>
         </div>
     )

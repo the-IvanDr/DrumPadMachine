@@ -14,20 +14,22 @@
     font-size: 40px;
     text-shadow: $red 0px 0px 5px;
     color: $red;
-}
 
-.DrumPad:hover{
-    cursor: pointer;
-    box-shadow: -2px 2px 5px $white;
-    text-shadow: $white 0px 0px 5px;
-    color: $white;
+    &:hover{
+        cursor: pointer;
+        box-shadow: -2px 2px 5px $white;
+        text-shadow: $white 0px 0px 5px;
+        color: $white;
+    }
 
-    // box-shadow: -2px 2px 5px #000;
-    // text-shadow: #000 0px 0px 5px;
-    // color: #000;
-}
+    &:active{
+        text-shadow: $white 0px 0px 20px, $white 0px 0px 15px, $white 0px 0px 10px;
+    }
 
-.DrumPad:active{
-    text-shadow: $white 0px 0px 20px, $white 0px 0px 15px, $white 0px 0px 10px;
-
+    &.pressed{
+        cursor: pointer;
+        box-shadow: -2px 2px 5px $white;
+        text-shadow: $white 0px 0px 20px, $white 0px 0px 15px, $white 0px 0px 10px, $white 0px 0px 5px;
+        color: $white;
+    }
 }
