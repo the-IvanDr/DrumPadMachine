@@ -1,8 +1,8 @@
-import { ADD_REF, PLAY_SOUND } from './types';
+import { ADD_REF, PLAY_SOUND, POWER_TOGGLE } from './types';
 
 const initialState = {
     volume: 50,
-    power: true,
+    power: false,
     bankActive: false,
     pads: new Array(9),
     bank1: [
@@ -44,8 +44,10 @@ export default function reducer(state = initialState, action) {
             state.pads[action.index].audioRef.current.play();
             state.pads[action.index].padRef.current.classList.add('pressed');
             setTimeout(()=>state.pads[action.index].padRef.current.classList.remove('pressed'), 100);
-
             return state;
+
+        case POWER_TOGGLE:
+            return {...state, power: !state.power}
         default: return state;
     }
 }

@@ -15,8 +15,10 @@ function DrumPad(props) {
     })
 
     const playAudio = () => {
-        audioRef.current.load();
-        audioRef.current.play();
+        if (props.power) {
+            audioRef.current.load();
+            audioRef.current.play();
+        }
     }
 
     return (
@@ -24,7 +26,7 @@ function DrumPad(props) {
             ref={padRef}
             onClick={playAudio}
             onMouseDown={ev => ev.preventDefault()}
-            className='DrumPad'
+            className={`DrumPad ${props.power ? null : 'powerOff'}`}
         >
             <audio ref={audioRef} className='clip' src={props.src}></audio>
             {props.key_b}
@@ -36,4 +38,8 @@ const mapDispatchToProps = {
     addRef
 }
 
-export default connect(null, mapDispatchToProps)(DrumPad);
+const mapStateToProps = state => ({
+    power: state.power
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DrumPad);

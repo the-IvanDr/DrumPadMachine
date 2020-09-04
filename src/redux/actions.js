@@ -1,4 +1,4 @@
-import { ADD_REF, PLAY_SOUND } from './types';
+import { ADD_REF, PLAY_SOUND, POWER_TOGGLE } from './types';
 
 export function addRef(index, audioRef, padRef){
     return {
@@ -11,5 +11,11 @@ export function playSound(index){
     return {
         type: PLAY_SOUND,
         index
+    }
+}
+
+export function powerToggle(){
+    return {
+        type: POWER_TOGGLE
     }
 }

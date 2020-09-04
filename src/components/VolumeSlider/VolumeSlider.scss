@@ -6,6 +6,10 @@
         text-align: center;
         text-shadow: $white 0px 0px 5px;
         color: $white;
+        &.powerOff {
+            text-shadow: none;
+            opacity: .4;
+        }
     }
     input {
         display: block;
@@ -30,6 +34,16 @@
             background: $white;
             border-radius: 5px;
             box-shadow: 0px 0px 2px $white;
+        }
+
+        &.powerOff::-webkit-slider-runnable-track {
+            box-shadow: none;
+            opacity: .4;
+        }
+
+        &.powerOff::-webkit-slider-thumb{
+            box-shadow: none;
+            background: #490005;
         }
     }
 }

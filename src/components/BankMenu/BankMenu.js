@@ -1,14 +1,22 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
 import './BankMenu.scss';
 
-export default function BankMenu() {
+function BankMenu(props) {
     return (
         <div className='BankMenu'>
-            <p>Bank</p>
-            <div className='select'>
-                <div className='select-1 active' />
-                <div className='select-2' />
+            <p className={props.power ? null : 'powerOff'}>Bank</p>
+            <div className={`select ${props.power ? null : 'powerOff'}`}>
+                <div className={`select-1 active ${props.power ? null : 'powerOff'}`} />
+                <div className={`select-2 ${props.power ? null : 'powerOff'}`} />
             </div>
         </div>
     )
 }
+
+const mapStateToProps = state => ({
+    power: state.power
+})
+
+export default connect(mapStateToProps)(BankMenu);

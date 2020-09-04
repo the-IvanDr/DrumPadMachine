@@ -1,5 +1,5 @@
-@import '../../scss/variables';
-.DrumPad{
+@import "../../scss/variables";
+.DrumPad {
     width: 105px;
     height: 120px;
     margin: 5px;
@@ -15,21 +15,32 @@
     text-shadow: $red 0px 0px 5px;
     color: $red;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
         box-shadow: -2px 2px 5px $white;
         text-shadow: $white 0px 0px 5px;
         color: $white;
     }
 
-    &:active{
+    &:active {
         text-shadow: $white 0px 0px 20px, $white 0px 0px 15px, $white 0px 0px 10px;
     }
 
-    &.pressed{
+    &.pressed {
         cursor: pointer;
         box-shadow: -2px 2px 5px $white;
         text-shadow: $white 0px 0px 20px, $white 0px 0px 15px, $white 0px 0px 10px, $white 0px 0px 5px;
         color: $white;
+    }
+
+    &.powerOff {
+        color: #4e5754;
+        text-shadow: none;
+        box-shadow: -1px 1px 1px #4e5754;
+        &:hover {
+            color: #4e5754;
+            text-shadow: none;
+            box-shadow: -1px 1px 1px #4e5754;
+        }
     }
 }

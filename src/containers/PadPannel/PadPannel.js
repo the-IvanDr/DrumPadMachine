@@ -34,8 +34,10 @@ function PadPannel(props) {
     }
 
     useEffect(() => {
-        window.addEventListener('keydown', playSound);
-        return () => window.removeEventListener('keydown', playSound);
+        if (props.power) {
+            window.addEventListener('keydown', playSound);
+            return () => window.removeEventListener('keydown', playSound);
+        }
     })
 
     return (
@@ -54,7 +56,8 @@ function PadPannel(props) {
 }
 
 const mapStateToProps = state => ({
-    bank: state.bankActive ? state.bank1 : state.bank2
+    bank: state.bankActive ? state.bank1 : state.bank2,
+    power: state.power
 });
 
 const mapDispatchToProps = {
