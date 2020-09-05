@@ -15,6 +15,30 @@
     text-shadow: $red 0px 0px 5px;
     color: $red;
 
+    &.bank2 {
+        color: orange;
+        text-shadow: orange 0px 0px 5px;
+        box-shadow: -2px 2px 5px orange;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: -2px 2px 5px green;
+            text-shadow: green 0px 0px 5px;
+            color: green;
+        }
+
+        &:active {
+            text-shadow: green 0px 0px 20px, green 0px 0px 15px, green 0px 0px 10px;
+        }
+
+        &.pressed {
+            cursor: pointer;
+            box-shadow: -2px 2px 5px green;
+            text-shadow: green 0px 0px 20px, green 0px 0px 15px, green 0px 0px 10px, green 0px 0px 5px;
+            color: green;
+        }
+    }
+
     &:hover {
         cursor: pointer;
         box-shadow: -2px 2px 5px $white;

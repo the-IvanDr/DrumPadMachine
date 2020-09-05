@@ -2,7 +2,7 @@ import { ADD_REF, PLAY_SOUND, POWER_TOGGLE, BANK_CHANGE, SET_DISPLAY, SET_VOLUME
 
 const initialState = {
     power: true,
-    volume: 0.1,
+    volume: 0.7,
     display: '',
     bankActive: false,
     pads: new Array(9),

@@ -28,7 +28,7 @@ function DrumPad(props) {
             ref={padRef}
             onClick={playAudio}
             onMouseDown={ev => ev.preventDefault()}
-            className={`DrumPad ${props.power ? null : 'powerOff'}`}
+            className={`DrumPad ${props.bankActive ? null : 'bank2'} ${props.power ? null : 'powerOff'}`}
         >
             <audio ref={audioRef} className='clip' src={props.src} />
             {props.key_b}
@@ -42,7 +42,8 @@ const mapDispatchToProps = {
 
 const mapStateToProps = state => ({
     power: state.power,
-    volume: state.volume
+    volume: state.volume,
+    bankActive: state.bankActive
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrumPad);
