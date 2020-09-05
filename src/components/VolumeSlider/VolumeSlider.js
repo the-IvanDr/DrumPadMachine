@@ -1,19 +1,40 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import './VolumeSlider.scss';
 
-function VolumeSlider(props){
+import { setVolume, setDisplay } from './../../redux/actions';
+
+function VolumeSlider(props) {
+
+    const onChangeHandler = event => {
+        props.setVolume(event.target.value);
+        props.setDisplay(`Volume: ${Math.round(event.target.value * 100)}`);
+    }
+
     return (
         <div className="VolumeSlider">
             <p className={props.power ? null : 'powerOff'}>Volume</p>
-            <input onChange={()=>{}} className={props.power ? null : 'powerOff'} type="range" step="0.01" min="0" max="1" value="0.9" />
+            <input
+                onChange={onChangeHandler}
+                className={props.power ? null : 'powerOff'}
+                value={props.volume}
+                type="range"
+                step="0.01"
+                min="0"
+                max="1"
+            />
         </div>
     )
 }
 
 const mapStateToProps = state => ({
-    power: state.power
+    power: state.power,
+    volume: state.volume
 });
 
-export default connect(mapStateToProps)(VolumeSlider);
+const mapDispatchToProps = {
+    setVolume, setDisplay
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(VolumeSlider);

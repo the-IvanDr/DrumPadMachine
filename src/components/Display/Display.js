@@ -5,12 +5,13 @@ import './Display.scss';
 
 function Display(props) {
     return (
-        <p className={`Display ${props.power ? null : 'powerOff'}`}></p>
+        <p className={`Display ${props.power ? null : 'powerOff'}`}>{props.display}</p>
     )
 }
 
 const mapStateToProps = state => ({
-    power: state.power
+    power: state.power,
+    display: state.display
 })
 
 export default connect(mapStateToProps)(Display);

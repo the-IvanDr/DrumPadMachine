@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './DrumPad.scss';
 
-import { addRef } from './../../redux/actions';
+import { addRef, setDisplay } from './../../redux/actions';
 
 
 function DrumPad(props) {
@@ -17,7 +17,9 @@ function DrumPad(props) {
     const playAudio = () => {
         if (props.power) {
             audioRef.current.load();
+            audioRef.current.volume = props.volume;
             audioRef.current.play();
+            props.setDisplay(props.name);
         }
     }
 
@@ -28,18 +30,19 @@ function DrumPad(props) {
             onMouseDown={ev => ev.preventDefault()}
             className={`DrumPad ${props.power ? null : 'powerOff'}`}
         >
-            <audio ref={audioRef} className='clip' src={props.src}></audio>
+            <audio ref={audioRef} className='clip' src={props.src} />
             {props.key_b}
         </div>
     )
 }
 
 const mapDispatchToProps = {
-    addRef
+    addRef, setDisplay
 }
 
 const mapStateToProps = state => ({
-    power: state.power
+    power: state.power,
+    volume: state.volume
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrumPad);
